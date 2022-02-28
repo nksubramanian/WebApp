@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,21 +27,6 @@ namespace WebApp
         public void ConfigureServices(IServiceCollection services)
         {
 
-           
-            string aadSchemeName = "AadJwtToken";
-            services.AddAuthentication()
-            .AddJwtBearer(aadSchemeName, options => {
-                options.Audience = Configuration["AadJwtToken:Audience"];
-                options.Authority = Configuration["AadJwtToken:Authority"];
-            });
-            services.AddAuthorization(options =>
-            {
-                options.DefaultPolicy = new AuthorizationPolicyBuilder()
-                    .RequireAuthenticatedUser()
-                    .AddAuthenticationSchemes(aadSchemeName)
-                    .Build();
-            });
-
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -63,7 +47,7 @@ namespace WebApp
             app.UseHttpsRedirection();
 
             app.UseRouting();
-            app.UseAuthentication();
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
