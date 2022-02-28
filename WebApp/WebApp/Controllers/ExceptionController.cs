@@ -30,9 +30,9 @@ namespace WebApp.Controllers
                     request.Headers.TryAddWithoutValidation("Cookie", "fpc=AleU0WhijvFHuet88wEtv5g2EDOHAQAAAD1kqdkOAAAA3yF9owEAAADbZ6nZDgAAAL__NTMBAAAABmip2Q4AAAA; stsservicecookie=estsfd; x-ms-gateway-slice=estsfd");
 
                     var contentList = new List<string>();
-                    contentList.Add($"client_id={Uri.EscapeDataString("482068b7-6a2b-4fdc-8627-c4c79894e0ed")}");
-                    contentList.Add($"scope={Uri.EscapeDataString("api://482068b7-6a2b-4fdc-8627-c4c79894e0ed/.default")}");
-                    contentList.Add($"client_secret={Uri.EscapeDataString("KBq7Q~xFUc6CBUSEnvKF1PnjS8Z8lPTYzGaxi")}");
+                    contentList.Add($"client_id={Uri.EscapeDataString("278b5ff1-54ec-45d6-99b5-a8b81c7fa3e3")}");
+                    contentList.Add($"scope={Uri.EscapeDataString("api://c75f41ac-093a-4cbb-862d-7521ff4ac8df/.default")}");
+                    contentList.Add($"client_secret={Uri.EscapeDataString("JRk7Q~9bkfkTGlkfPPXxK2mQ6CcoXu8yXRREO")}");
                     contentList.Add($"grant_type={Uri.EscapeDataString("client_credentials")}");
                     request.Content = new StringContent(string.Join("&", contentList));
                     request.Content.Headers.ContentType = MediaTypeHeaderValue.Parse("application/x-www-form-urlencoded");
